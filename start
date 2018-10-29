@@ -1,0 +1,1 @@
+docker exec -w /app -it my_twitter npm start

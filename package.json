@@ -1,0 +1,15 @@
+{
+  "name": "my_twitter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_PATH=/modules/node_modules nodemon -L bin/www.js"
+  },
+  "author": "habdel-i",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
