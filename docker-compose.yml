@@ -1,0 +1,36 @@
+version: "2"
+services:
+  app:
+    container_name: my_twitter
+    restart: always
+    build: .
+    ports:
+    - "3000:3000"
+    links:
+    - mongo
+    volumes:
+    - ./:/app
+    - node_modules:/modules
+    environment:
+    - PORT=3000
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+    - "27017:27017"
+    volumes:
+    - mongo_data:/data/db
+
+  mongo_express:
+    container_name: mongo_my_admin
+    restart: always
+    image: mongo-express
+    ports:
+    - "8081:8081"
+    links:
+    - mongo
+
+volumes:
+  mongo_data:
+  node_modules:
