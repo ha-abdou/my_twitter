@@ -10,6 +10,7 @@ services:
     - mongo
     volumes:
     - ./:/app
+    - node_modules:/modules
     environment:
     - PORT=3000
 
@@ -32,3 +33,4 @@ services:
 
 volumes:
   mongo_data:
+  node_modules:

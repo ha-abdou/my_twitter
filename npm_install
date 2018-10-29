@@ -1,1 +1,1 @@
-docker exec my_twitter mkdir /modules && docker exec -w /modules my_twitter ln -s /app/package.json && docker exec -w /modules my_twitter npm install
+docker exec -w /modules my_twitter ln -s /app/package.json && docker exec -w /modules my_twitter npm install
