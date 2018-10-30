@@ -1,0 +1,31 @@
+<% include ../../../views/partials/head.ejs %>
+
+<% include ../../../views/partials/menu.ejs %>
+
+<div class="container">
+<br/>
+<br/>
+<div class="jumbotron">
+    <h1 class="display-4">Login:</h1>
+    <hr class="my-4">
+    <form action="/login" method="post">
+        <div class="form-group">
+            <label for="user_name">User name</label>
+            <input type="text" name="user_name" class="form-control" id="user_name" placeholder="Enter user name">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">login</button>
+        <a href="/signin" class="btn btn-primary">Sign-in</a>
+    </form>
+</div>
+</div>
+
+<script>
+    if (window.location.href.includes("error=true"))
+        alert("login error");
+</script>
+
+<% include ../../../views/partials/bottom.ejs %>

@@ -1,6 +1,8 @@
 "use strict";
 
 function checkForUewUser(User, req, res) {
+    if (!req.body.email || !req.body.user_name)
+        return res.json({err: null, msg: "email or user name should not be empty"});
     User.find({email: req.body.email},function (err, doc) {
         if (err)
             res.json({err, msg: "todo error on checkForUewUser."});
