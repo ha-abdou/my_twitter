@@ -1,0 +1,52 @@
+<% include ../../../views/partials/head.ejs %>
+
+<% include ../../../views/partials/menu.ejs %>
+
+<div class="container">
+    <br/>
+    <br/>
+    <div class="jumbotron">
+        <h1 class="display-4">Create new account:</h1>
+        <hr class="my-4">
+        <form>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="name">Full name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter Full name">
+            </div>
+            <div class="form-group">
+                <label for="username">Full username:</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <a id="submit" class="btn btn-primary">Submit</a>
+        </form>
+    </div>
+</div>
+
+<div id="email-send-modal" class="modal" tabindex="-1" role="dialog">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p>Verification link has been send to your email, pleas click on it.</p>
+        </div>
+        <div class="modal-footer">
+            <a href="/login" type="button" class="btn btn-primary">go to login</a>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="/js/users/signin.js"></script>
+<% include ../../../views/partials/bottom.ejs %>
