@@ -26,11 +26,7 @@ app.use(bodyParser.urlencoded({limit: '500mb', extended: true}));
 /**/
 app.use(express.static(path.join(__dirname, 'public')));
 
-//todo remove this
-app.use("/logout", function (req, res) {
-    res.cookie('user_name', "", { maxAge: 1, httpOnly: true });
-    res.redirect("/");
-});
+
 /**/
 app.use('/', indexRouter);
 app.use(users);
