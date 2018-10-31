@@ -8,8 +8,9 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 
 /**/
-const indexRouter = require('./routes/index');
-const users = require('./modules/users/routes');
+const indexRouter   = require('./routes/index');
+const users         = require('./modules/users/routes');
+const tweets        = require('./modules/tweets/routes');
 
 /**/
 const app = express();
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 /**/
 app.use('/', indexRouter);
 app.use(users);
+app.use(tweets);
 /**/
 
 /**/
