@@ -1,0 +1,17 @@
+<div class="container">
+<br/>
+<br/>
+<div class="jumbotron">
+    <h1>Tweets:</h1>
+    <% for(var i=0; i < tweets.length; i++) { %>
+        <h3 class="display-5">on: <%= tweets[i].created_at%></h3>
+        <h2 class="display-5">by: <a href="/tweets/<%= tweets[i].user_name%>"><%= tweets[i].user_name%></a></h2>
+        <p style="word-wrap: break-word;" class="display-5"><%- tweets[i].content%></p>
+        <% if (tweets[i].user_name === userName){ %>
+            <a href="/tweets/edit/<%= tweets[i]._id%>">edit</a>
+        <% } %>
+        <hr/>
+    <% } %>
+
+</div>
+</div>

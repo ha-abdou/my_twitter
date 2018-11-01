@@ -1,11 +1,11 @@
 "use strict";
 
-const getProfileInfo        = require('../abstractControllers/getProfileInfo');
+const getLoggedProfileInfo        = require('../abstractControllers/getLoggedProfileInfo');
 
 function profileController(req, res) {
     if (!req.cookies.uid)
         return (res.redirect("/login"));
-    getProfileInfo(req, function (doc) {
+    getLoggedProfileInfo(req, function (doc) {
         if (!doc)
             return (res.redirect("/login"));
         res.render('../modules/users/views/profile', doc);

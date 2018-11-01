@@ -3,7 +3,7 @@
 const LoginSessions = require('../../../db/models/loginSessions');
 const User          = require('../../../db/models/user');
 
-function getProfileInfo(req, callback) {
+function getLoggedProfileInfo(req, callback) {
     LoginSessions.findOne({uid: req.cookies.uid}, function (err, doc) {
         if (err)
             console.log("todo err getProfileInfo");
@@ -19,4 +19,4 @@ function getProfileInfo(req, callback) {
     })
 }
 
-module.exports = getProfileInfo;
+module.exports = getLoggedProfileInfo;
