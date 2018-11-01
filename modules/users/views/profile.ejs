@@ -1,0 +1,24 @@
+<% include ../../../views/partials/head.ejs %>
+
+<% include ../../../views/partials/menu.ejs %>
+
+<div class="container">
+<br/>
+<br/>
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-3"><h1 class="display-5">Email:</h1></div>
+        <div class="col-9"><h1 class="display-5"><%= email %></h1></div>
+    </div>
+    <div class="row">
+        <div class="col-3"><h1 class="display-5">User name:</h1></div>
+        <div class="col-9"><h1 class="display-5"><%= user_name %></h1></div>
+    </div>
+    <div class="row">
+        <div class="col-3"><h1 class="display-5">Full name:</h1></div>
+        <div class="col-9"><h1 class="display-5"><%= full_name %></h1></div>
+    </div>
+</div>
+</div>
+
+<% include ../../../views/partials/bottom.ejs %>

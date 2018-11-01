@@ -8,8 +8,9 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 
 /**/
-const indexRouter = require('./routes/index');
-const users = require('./modules/users/routes');
+const indexRouter   = require('./routes/index');
+const users         = require('./modules/users/routes');
+const tweets        = require('./modules/tweets/routes');
 
 /**/
 const app = express();
@@ -26,14 +27,11 @@ app.use(bodyParser.urlencoded({limit: '500mb', extended: true}));
 /**/
 app.use(express.static(path.join(__dirname, 'public')));
 
-//todo remove this
-app.use("/logout", function (req, res) {
-    res.cookie('user_name', "", { maxAge: 1, httpOnly: true });
-    res.redirect("/");
-});
+
 /**/
 app.use('/', indexRouter);
 app.use(users);
+app.use(tweets);
 /**/
 
 /**/
@@ -46,7 +44,7 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
-//  res.locals.error = req.app.get('env') === 'development' ? err : {};
+    res.locals.error = err;// req.app.get('env') === 'development' ? err : {};
 
     // render the error page
     res.status(err.status || 500);

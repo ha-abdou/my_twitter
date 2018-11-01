@@ -13,7 +13,7 @@ function createUserController(User, req, res) {
         level: 1,//1 for normal sign-in user
         email_checked: 0
     });
-    newUser.save().then(function (err, newDoc) {
+    newUser.save(function (err, newDoc) {
         //todo send email
         res.end({err, msg: "Verification link has been send to your email, pleas click on it."})
     });

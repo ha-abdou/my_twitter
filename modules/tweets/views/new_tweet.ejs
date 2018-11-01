@@ -1,0 +1,21 @@
+<% include ../../../views/partials/head.ejs %>
+
+<% include ../../../views/partials/menu.ejs %>
+
+<div class="container">
+<br/>
+<br/>
+<div class="jumbotron">
+    <h1 class="display-4">new tweet:</h1>
+    <hr class="my-4">
+    <form action="/tweets/new" method="post">
+        <div class="form-group">
+            <label for="tweet">Your tweet:</label>
+            <textarea name="content" class="form-control" rows="5" id="tweet" maxlength="256"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">tweet it</button>
+    </form>
+</div>
+</div>
+
+<% include ../../../views/partials/bottom.ejs %>
