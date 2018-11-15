@@ -2,8 +2,13 @@ FROM node
 
 EXPOSE 3000
 
-#nodemon
 RUN npm install -g nodemon
+
+RUN npm install -g typescript
+
+RUN npm install -g ts-node
+
+RUN npm install -g tslint
 
 RUN git config --global user.email "hassaineabdelillah@gmail.com"
 
