@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "old_start": "NODE_PATH=/modules/node_modules nodemon -L bin/www.js",
-    "start": "NODE_PATH=/modules/node_modules npm run build:live",
+    "test": "mocha -r ts-node/register src/**/*.spec.ts",
+    "old_start": "NODE_PATH=/modules/node_modules ONDEV='true' nodemon -L bin/www.js",
+    "start": "NODE_PATH=/modules/node_modules ONDEV='true' npm run build:live",
     "build": "tsc -p .",
     "build:live": "nodemon -L --watch 'src/**/*.ts' --exec 'ts-node' src/server.ts",
     "tslint": "tslint -c tslint.json 'src/**/*.ts'"
@@ -33,7 +33,11 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.8",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
     "ts-node": "^7.0.1",
     "typescript": "^3.1.6"
   }
