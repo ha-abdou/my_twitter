@@ -1,5 +1,10 @@
 $("#submit").click(function () {
-    $.post("/api/user/new", {})
+    $.post("/api/user/new", {
+            email:      $("#email").val(),
+            full_name:  $("#name").val(),
+            username:  $("#username").val(),
+            password:   $("#password").val()
+        })
         .then((res)=> {
             console.log(res);
         })

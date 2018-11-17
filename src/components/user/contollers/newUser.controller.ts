@@ -16,16 +16,12 @@ function newUserController(req: Request, res: Response, next: NextFunction)
         password : req.body.password,
     }
     User.new(userInfo)
-        .then((err: any, msg: any)=> {
-            if (err)
-                res.json(JSONError("cant create new user", err));
+        .then((msg: any)=> res.json(msg)
+        , (err: any) => {
+            if (err.err)
+                res.json(JSONError("cant create new user", err.err));
             else
-                res.json(msg);
-        }, (err: any, errMsg: any)=> {
-            if (err)
-                res.json(JSONError("cant create new user", err));
-            else
-                res.json(errMsg);
+                res.json(err.errMsg);
         });
 }
 
